@@ -2,6 +2,10 @@ package modelo.Excepciones;
 
 /**
  * ExceptionNota es una excepción que se lanza cuando la descripción de la nota no es válida.
+ *
+ * @author Alberto
+ * @version 1.0
+ * @created 06-jun-2022
  */
 public class ExceptionNota extends Exception {
     /**

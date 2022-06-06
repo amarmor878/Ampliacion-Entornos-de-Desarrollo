@@ -1,5 +1,6 @@
 package modelo.POJO;
 
+import modelo.Aplicacion;
 import modelo.Excepciones.ExceptionUsuario;
 
 /**
@@ -22,6 +23,7 @@ public class Usuario {
             this.apellido = apellido;
             this.email = email;
             this.password = password;
+            Aplicacion.agregarUsuario(this);
         } else
             throw new ExceptionUsuario("El usuario no es válido.");
     }
@@ -126,6 +128,11 @@ public class Usuario {
             this.password = password;
         } else
             throw new ExceptionUsuario("La contraseña no es válida.");
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s %s - %s - %s", nombre, apellido, email);
     }
 }
 

@@ -4,9 +4,15 @@ import modelo.Excepciones.ExceptionUsuario;
 import modelo.POJO.Usuario;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
+import java.util.List;
 
+/**
+ * Clase UsuarioAdministrador que hereda de Usuario y gestiona los usuarios creados por el administrador.
+ *
+ * @author Alberto
+ * @version 1.0
+ * @created 06-jun-2022
+ */
 public class UsuarioAdministrador extends Usuario {
     private LocalDateTime fechaUltimaConexion;
 
@@ -92,5 +98,30 @@ public class UsuarioAdministrador extends Usuario {
         return crearUsuario;
     }
 
+    /**
+     * Metodo que desactiva un UsuarioAnonimo.
+     *
+     * @param usuarioAnonimo UsuarioAnonimo con los datos nuevos.
+     */
+    public void estadoUsuarioAnonimo(UsuarioAnonimo usuarioAnonimo) {
+        if (UsuarioAnonimo.getInstance() == null) {
+            UsuarioAnonimo.getInstance().desconectar();
+        } else {
+            UsuarioAnonimo.getInstance();
+        }
+    }
 
+    public boolean eliminarUsuario(List<Usuario> listaUsuario, Usuario usuario) {
+        boolean eliminado = false;
+        if (listaUsuario.contains(usuario)) {
+            listaUsuario.remove(usuario);
+            eliminado = true;
+        }
+        return eliminado;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("%s - %s", super.toString(), this.fechaUltimaConexion);
+    }
 }

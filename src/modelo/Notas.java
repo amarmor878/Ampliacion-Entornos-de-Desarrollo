@@ -1,7 +1,6 @@
 package modelo;
 
 import modelo.Excepciones.ExceptionNota;
-import modelo.Excepciones.ExceptionUsuario;
 
 import java.util.Date;
 

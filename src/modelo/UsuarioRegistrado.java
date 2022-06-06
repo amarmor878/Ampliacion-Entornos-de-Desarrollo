@@ -200,4 +200,9 @@ public class UsuarioRegistrado extends Usuario implements FuncionesNotas, Funcio
             listaContactos.set(listaContactos.indexOf(contacto), contactoModificado);
         }
     }
+
+    @Override
+    public String toString() {
+        return String.format("%s - %s", super.toString(), identificacion);
+    }
 }

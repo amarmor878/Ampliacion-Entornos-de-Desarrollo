@@ -36,6 +36,11 @@ public class UsuarioAnonimo implements FuncionesNotas {
         return instance;
     }
 
+    public void desconectar() {
+        if (instance != null)
+            instance = null;
+    }
+
     /**
      * Metodo de la interfaz FuncionesNotas que devuelve una lista de notas.
      *

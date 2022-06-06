@@ -4,6 +4,13 @@ import modelo.Contacto;
 
 import java.util.List;
 
+/**
+ * Interfaz con metodos para gestionar los contactos.
+ *
+ * @author Alberto
+ * @version 1.0
+ * @created 06-jun-2022
+ */
 public interface FuncionesContacto {
     List<Contacto> listarContactos(List<Contacto> contactos);
 
