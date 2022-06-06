@@ -1,3 +1,7 @@
+package modelo;
+
+import exceptions.ExceptionContacto;
+
 /**
  * Clase Contacto que representa un contacto de la aplicacion.
  * Esta clase contiene los atributos y métodos necesarios para la
@@ -38,7 +42,7 @@ public class Contacto {
             this.direccion = direccion;
             this.telefono = telefono;
         } else {
-            throw new ExceptionContacto("Contacto no valido");
+            throw new ExceptionContacto("modelo.Contacto no valido");
         }
     }
 
@@ -102,7 +106,7 @@ public class Contacto {
     }
 
     /**
-     * Método que modifica el email del contacto.
+     * Método que modifica el email del contacto comprobando que sea valido.
      *
      * @param email String con el email del contacto.
      */
@@ -141,7 +145,7 @@ public class Contacto {
     }
 
     /**
-     * Método que modifica el teléfono del contacto.
+     * Método que modifica el teléfono del contacto comprobando que sea valido.
      *
      * @param telefono String con el teléfono del contacto.
      */
@@ -156,19 +160,6 @@ public class Contacto {
     @Override
     public String toString() {
         return String.format("%s %s - %s - %s - %s", nombre, apellido, email, direccion, telefono);
-    }
-
-}
-
-/**
- * Clase ExceptionContacto que gestiona las excepciones de la clase Contacto.
- */
-class ExceptionContacto extends Exception {
-    /**
-     * @param mensaje String con el mensaje de error.
-     */
-    public ExceptionContacto(String mensaje) {
-        super(mensaje);
     }
 
 }

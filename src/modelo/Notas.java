@@ -1,7 +1,9 @@
+package modelo;
+
 import java.util.Date;
 
 /**
- * Clase Notas que representa la gestión de anotaciones de la aplicación.
+ * Clase modelo.Notas que representa la gestión de anotaciones de la aplicación.
  *
  * @author Alberto
  * @version 1.0
@@ -12,14 +14,14 @@ public class Notas {
     private Date fechaModificacion;
 
     /**
-     * Constructor vacio de la clase Notas.
+     * Constructor vacio de la clase modelo.Notas.
      */
     public Notas() {
 
     }
 
     /**
-     * Constructor de la clase Notas.
+     * Constructor de la clase modelo.Notas.
      *
      * @param descripcion String con la descripción de la nota.
      */
