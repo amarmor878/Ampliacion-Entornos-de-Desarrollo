@@ -1,4 +1,4 @@
-# Ampliacion-Entornos-de-Desarrollo
+# Ampliacion Entornos de Desarrollo
 
 Se desea diseñar y codificar una aplicacion para la administracion de contactos y notas por usuario registrado. El acceso a la aplicacion será a partir de contraseña. 
 Los contactos   deberán   contar con el   nombre,   apellido,   correo electronico, direccion y telefono, pudiendose extender a un breve comentario   
