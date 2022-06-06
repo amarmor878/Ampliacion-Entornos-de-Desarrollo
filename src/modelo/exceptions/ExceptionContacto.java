@@ -1,4 +1,4 @@
-package exceptions;
+package modelo.exceptions;
 
 /**
  * Clase ExceptionContacto que gestiona las excepciones de la clase Contacto.
@@ -17,4 +17,8 @@ public class ExceptionContacto extends Exception {
         super(mensaje);
     }
 
+    @Override
+    public String getMessage() {
+        return super.getMessage();
+    }
 }

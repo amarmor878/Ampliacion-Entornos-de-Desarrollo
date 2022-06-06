@@ -1,10 +1,10 @@
 package modelo;
 
-import exceptions.ExceptionUsuario;
-import modelo.POJO.Identificar;
+import modelo.exceptions.ExceptionUsuario;
 import modelo.POJO.Usuario;
 import modelo.interfaces.FuncionesNotas;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,8 +15,10 @@ import java.util.List;
  * @version 1.0
  * @created 06-jun-2022
  */
-public class UsuarioRegistrado extends Usuario implements FuncionesNotas, FuncionesContactos {
+public class UsuarioRegistrado extends Usuario implements FuncionesNotas {
     private Identificar identificacion;
+    private List<Notas> listaNotas = new ArrayList<>();
+    private List<Contacto> listaContactos = new ArrayList<>();
 
     /**
      * Constructor de la clase UsuarioRegistrado.
@@ -31,38 +33,64 @@ public class UsuarioRegistrado extends Usuario implements FuncionesNotas, Funcio
     public UsuarioRegistrado(String nombre, String apellido, String email, String password, Identificar identificacion) throws ExceptionUsuario {
         super(nombre, apellido, email, password);
         if (identificacion != Identificar.NICK && identificacion != Identificar.APODO) {
-            throw new ExceptionUsuario("Identificacion no valida");
+            throw new ExceptionUsuario("Identificacion no valida, debe ser NICK o APODO");
         } else {
             this.identificacion = identificacion;
         }
-
     }
 
-    //TODO implementar las funciones de FuncionesNotas
+    /**
+     * Metodo de la interfaz FuncionesNotas que devuelve una lista de notas.
+     *
+     * @param _listarNotas Lista de notas.
+     * @return Lista de notas.
+     */
     @Override
-    public List<Notas> listarNotas(List<Notas> notas) {
-        return null;
+    public List<Notas> listarNotas(List<Notas> _listarNotas) {
+        listaNotas.addAll(_listarNotas);
+        return listaNotas;
     }
 
+    /**
+     * Metodo de la interfaz FuncionesNotas que agrega notas a una lista.
+     *
+     * @param nota Nota a agregar.
+     */
     @Override
     public void agregarNotas(Notas nota) {
-
+        listaNotas.add(nota);
     }
 
+    /**
+     * Metodo de la interfaz FuncionesNotas que devuelve una lista de contactos.
+     *
+     * @param nota Nota a agregar.
+     */
     @Override
     public void borrarNotas(Notas nota) {
-
+        listaNotas.remove(nota);
     }
 
+    /**
+     * Metodo de la interfaz FuncionesNotas que devuelve una lista de contactos.
+     *
+     * @param nota      Nota a agregar.
+     * @param nuevaNota Nota a agregar.
+     */
     @Override
-    public void modificarNotas(Notas nota, Notas nueva) {
-
+    public void modificarNotas(Notas nota, Notas nuevaNota) {
+        Notas notaModificada = listaNotas.get(listaNotas.indexOf(nota));
+        for (Notas notaActual : listaNotas) {
+            if (notaActual.equals(nota)) {
+                notaModificada = nuevaNota;
+                break;
+            }
+        }
+        if (notaModificada != null) {
+            listaNotas.set(listaNotas.indexOf(nota), notaModificada);
+        }
     }
 
     //TODO solucionar implementacion de FuncionesContactos
-    @Override
-    public void agregarContacto(Contacto contacto) {
-
-    }
 
 }

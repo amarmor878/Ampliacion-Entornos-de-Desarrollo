@@ -1,4 +1,4 @@
-package modelo.POJO;
+package modelo;
 
 /**
  * Clase enumerada que identifica el acceso a la aplicación del UsuarioRegistrado y que permite identificarlo

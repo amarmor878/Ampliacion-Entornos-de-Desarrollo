@@ -1,4 +1,4 @@
-package exceptions;
+package modelo.exceptions;
 
 /**
  * ExceptionUsuario es una excepción que se lanza cuando se intenta crear un usuario con un email o password no válidos.
@@ -15,5 +15,10 @@ public class ExceptionUsuario extends Exception {
      */
     public ExceptionUsuario(String mensaje) {
         super(mensaje);
+    }
+
+    @Override
+    public String getMessage() {
+        return super.getMessage();
     }
 }

@@ -1,6 +1,6 @@
 package modelo;
 
-import exceptions.ExceptionContacto;
+import modelo.exceptions.ExceptionContacto;
 
 /**
  * Clase Contacto que representa un contacto de la aplicacion.
@@ -42,7 +42,7 @@ public class Contacto {
             this.direccion = direccion;
             this.telefono = telefono;
         } else {
-            throw new ExceptionContacto("modelo.Contacto no valido");
+            throw new ExceptionContacto("Contacto no valido");
         }
     }
 
@@ -161,6 +161,5 @@ public class Contacto {
     public String toString() {
         return String.format("%s %s - %s - %s - %s", nombre, apellido, email, direccion, telefono);
     }
-
 }
 

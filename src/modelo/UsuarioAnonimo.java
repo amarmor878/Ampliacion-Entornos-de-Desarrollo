@@ -88,4 +88,5 @@ public class UsuarioAnonimo implements FuncionesNotas {
             listaNotas.set(listaNotas.indexOf(nota), notaModificada);
         }
     }
+
 }
