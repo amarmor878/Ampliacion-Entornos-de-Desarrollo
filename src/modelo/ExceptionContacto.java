@@ -1,4 +1,4 @@
-package modelo.exceptions;
+package modelo;
 
 /**
  * Clase ExceptionContacto que gestiona las excepciones de la clase Contacto.

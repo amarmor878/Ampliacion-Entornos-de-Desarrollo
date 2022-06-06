@@ -1,7 +1,5 @@
 package modelo;
 
-import modelo.interfaces.FuncionesNotas;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -67,7 +65,6 @@ public class UsuarioAnonimo implements FuncionesNotas {
     @Override
     public void borrarNotas(Notas nota) {
         listaNotas.remove(nota);
-
     }
 
     /**

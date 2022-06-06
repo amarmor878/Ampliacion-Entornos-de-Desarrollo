@@ -1,4 +1,4 @@
-package modelo.exceptions;
+package modelo;
 
 /**
  * ExceptionUsuario es una excepción que se lanza cuando se intenta crear un usuario con un email o password no válidos.

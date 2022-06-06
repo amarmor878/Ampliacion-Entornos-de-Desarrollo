@@ -1,7 +1,5 @@
 package modelo;
 
-import modelo.exceptions.ExceptionContacto;
-
 /**
  * Clase Contacto que representa un contacto de la aplicacion.
  * Esta clase contiene los atributos y métodos necesarios para la

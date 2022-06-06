@@ -1,6 +1,4 @@
-package modelo.POJO;
-
-import modelo.exceptions.ExceptionUsuario;
+package modelo;
 
 /**
  * Clase POJO de Usuario que representa un usuario de la aplicación.
@@ -15,16 +13,7 @@ public class Usuario {
     private String email;
     private String password;
 
-    /**
-     * Constructor de Usuario que recibe los datos del usuario y validan el email y la contrasenia
-     * para que el usuario sea válido.
-     *
-     * @param nombre   String nombre del usuario.
-     * @param apellido String apellido del usuario.
-     * @param email    String email del usuario.
-     * @param password String contraseña del usuario.
-     * @throws ExceptionUsuario Si el usuario no es válido a través de su email y contrasenia.
-     */
+
     public Usuario(String nombre, String apellido, String email, String password) throws ExceptionUsuario {
         if (isEmailValido(email) && isPasswordValido(password)) {
             this.nombre = nombre;
