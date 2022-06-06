@@ -34,7 +34,6 @@ public class UsuarioAnonimo {
 
     public void agregarNota(Notas nota) {
         listaNotas.add(nota);
-
     }
 
     public void eliminarNota(Notas nota) {
