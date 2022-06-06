@@ -1,4 +1,4 @@
-package modelo;
+package modelo.Excepciones;
 
 /**
  * Clase ExceptionContacto que gestiona las excepciones de la clase Contacto.
@@ -17,6 +17,10 @@ public class ExceptionContacto extends Exception {
         super(mensaje);
     }
 
+    /**
+     * Método que devuelve el mensaje de error.
+     * @return String con el mensaje de error.
+     */
     @Override
     public String getMessage() {
         return super.getMessage();

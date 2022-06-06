@@ -1,5 +1,8 @@
 package modelo;
 
+import modelo.Excepciones.ExceptionNota;
+import modelo.Excepciones.ExceptionUsuario;
+
 import java.util.Date;
 
 /**
@@ -21,12 +24,17 @@ public class Notas {
     }
 
     /**
-     * Constructor de la clase modelo.Notas.
+     * Constructor de la clase Notas.
      *
      * @param descripcion String con la descripción de la nota.
      */
-    public Notas(String descripcion) {
-        this.descripcion = descripcion;
+    public Notas(String descripcion) throws ExceptionNota {
+        if (descripcion != null) {
+            this.descripcion = descripcion;
+        } else {
+            throw new ExceptionNota("La descripción no puede es valida");
+        }
+
     }
 
     /**

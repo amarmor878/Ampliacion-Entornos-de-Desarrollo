@@ -1,4 +1,6 @@
-package modelo;
+package modelo.POJO;
+
+import modelo.Excepciones.ExceptionUsuario;
 
 /**
  * Clase POJO de Usuario que representa un usuario de la aplicación.

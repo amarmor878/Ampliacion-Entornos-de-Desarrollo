@@ -1,5 +1,7 @@
 package modelo;
 
+import modelo.Interfaces.FuncionesNotas;
+
 import java.util.ArrayList;
 import java.util.List;
 

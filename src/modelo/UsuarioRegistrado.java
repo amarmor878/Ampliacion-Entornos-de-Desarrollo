@@ -1,5 +1,10 @@
 package modelo;
 
+import modelo.Excepciones.ExceptionUsuario;
+import modelo.Interfaces.FuncionesContacto;
+import modelo.Interfaces.FuncionesNotas;
+import modelo.POJO.Usuario;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,7 +16,7 @@ import java.util.List;
  * @version 1.0
  * @created 06-jun-2022
  */
-public class UsuarioRegistrado extends Usuario implements FuncionesNotas {
+public class UsuarioRegistrado extends Usuario implements FuncionesNotas, FuncionesContacto {
     private Identificar identificacion;
     private List<Notas> listaNotas = new ArrayList<>();
     private List<Contacto> listaContactos = new ArrayList<>();
@@ -35,6 +40,60 @@ public class UsuarioRegistrado extends Usuario implements FuncionesNotas {
     }
 
     /**
+     * Método que devuelve la identificación del usuario registrado.
+     *
+     * @return Identificar con la identificación del usuario registrado.
+     */
+    public Identificar getIdentificacion() {
+        return identificacion;
+    }
+
+    /**
+     * Método que modifica la identificación del usuario registrado.
+     *
+     * @return Identificar con la identificación del usuario registrado.
+     */
+    public void setIdentificacion(Identificar identificacion) {
+        this.identificacion = identificacion;
+    }
+
+    /**
+     * Método que devuelve la lista de notas del usuario registrado.
+     *
+     * @return Lista de notas del usuario registrado.
+     */
+    public List<Notas> getListaNotas() {
+        return listaNotas;
+    }
+
+    /**
+     * Método que modifica la lista de notas del usuario registrado.
+     *
+     * @return Lista de notas del usuario registrado.
+     */
+    public void setListaNotas(List<Notas> listaNotas) {
+        this.listaNotas = listaNotas;
+    }
+
+    /**
+     * Método que devuelve la lista de contactos del usuario registrado.
+     *
+     * @return Lista de contactos del usuario registrado.
+     */
+    public List<Contacto> getListaContactos() {
+        return listaContactos;
+    }
+
+    /**
+     * Método que modifica la lista de contactos del usuario registrado.
+     *
+     * @return Lista de contactos del usuario registrado.
+     */
+    public void setListaContactos(List<Contacto> listaContactos) {
+        this.listaContactos = listaContactos;
+    }
+
+    /**
      * Metodo de la interfaz FuncionesNotas que devuelve una lista de notas.
      *
      * @param _listarNotas Lista de notas.
@@ -42,7 +101,9 @@ public class UsuarioRegistrado extends Usuario implements FuncionesNotas {
      */
     @Override
     public List<Notas> listarNotas(List<Notas> _listarNotas) {
-        listaNotas.addAll(_listarNotas);
+        for (Notas nota : _listarNotas) {
+            listaNotas.add(nota);
+        }
         return listaNotas;
     }
 
@@ -86,6 +147,57 @@ public class UsuarioRegistrado extends Usuario implements FuncionesNotas {
         }
     }
 
-    //TODO solucionar implementacion de FuncionesContactos
+    /**
+     * Metodo de la interfaz FuncionesContacto que devuelve una lista de contactos.
+     *
+     * @param contactos Lista de contactos.
+     * @return Lista de contactos.
+     */
+    @Override
+    public List<Contacto> listarContactos(List<Contacto> contactos) {
+        for (Contacto contacto : contactos) {
+            listaContactos.add(contacto);
+        }
+        return listaContactos;
+    }
 
+    /**
+     * Metodo de la interfaz FuncionesContacto que agrega contactos a una lista.
+     *
+     * @param contacto Contacto a agregar.
+     */
+    @Override
+    public void agregarContacto(Contacto contacto) {
+        listaContactos.add(contacto);
+    }
+
+    /**
+     * Metodo de la interfaz FuncionesContacto que devuelve una lista de contactos.
+     *
+     * @param contacto Contacto a agregar.
+     */
+    @Override
+    public void borrarContacto(Contacto contacto) {
+        listaContactos.remove(contacto);
+    }
+
+    /**
+     * Metodo de la interfaz FuncionesContacto que devuelve una lista de contactos.
+     *
+     * @param contacto      Contacto a agregar.
+     * @param nuevoContacto Contacto a agregar.
+     */
+    @Override
+    public void modificarContacto(Contacto contacto, Contacto nuevoContacto) {
+        Contacto contactoModificado = listaContactos.get(listaContactos.indexOf(contacto));
+        for (Contacto contactoActual : listaContactos) {
+            if (contactoActual.equals(contacto)) {
+                contactoModificado = nuevoContacto;
+                break;
+            }
+        }
+        if (contactoModificado != null) {
+            listaContactos.set(listaContactos.indexOf(contacto), contactoModificado);
+        }
+    }
 }
