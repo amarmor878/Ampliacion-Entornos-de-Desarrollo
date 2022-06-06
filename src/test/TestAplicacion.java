@@ -1,4 +1,4 @@
-package modelo;
+package test;
 
 public class TestAplicacion {
 }
