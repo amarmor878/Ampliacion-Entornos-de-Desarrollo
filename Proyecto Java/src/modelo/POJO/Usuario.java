@@ -16,7 +16,14 @@ public class Usuario {
     private String email;
     private String password;
 
-
+    /**
+     * Constructor de la clase Usuario.
+     * @param nombre Nombre del usuario.
+     * @param apellido Apellido del usuario.
+     * @param email Email del usuario.
+     * @param password Contraseña del usuario.
+     * @throws ExceptionUsuario Si el usuario no cumple con los requisitos.
+     */
     public Usuario(String nombre, String apellido, String email, String password) throws ExceptionUsuario {
         if (isEmailValido(email) && isPasswordValido(password)) {
             this.nombre = nombre;
